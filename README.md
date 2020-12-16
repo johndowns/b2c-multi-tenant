@@ -2,6 +2,16 @@
 
 This sample illustrates how to use Azure AD B2C with Azure AD (configured to accept sign ins from any Azure AD tenant). It also illustrates how to use GitHub Actions to deploy custom policies.
 
+## Links to walkthroughs
+
+You will need to create a B2C tenant and various entities in order to deploy this.
+
+1. Create an Azure AD B2C tenant. Note the tenant name and ID for use in the variables below.
+2. [Create and configure the Identity Experience Framework applications and policy keys](https://docs.microsoft.com/en-us/azure/active-directory-b2c/custom-policy-get-started#register-identity-experience-framework-applications). Note the client IDs for use in the variables below.
+3. [Create a Facebook application](https://docs.microsoft.com/en-us/azure/active-directory-b2c/identity-provider-facebook?pivots=b2c-custom-policy). Note the App ID for use in the variables below.
+4. In a standard Azure AD tenant (not a B2C tenant), [create a multitenant app registration](https://docs.microsoft.com/en-us/azure/active-directory-b2c/identity-provider-azure-ad-multi-tenant?pivots=b2c-custom-policy#register-an-application) and [configure its claims](https://docs.microsoft.com/en-us/azure/active-directory-b2c/identity-provider-azure-ad-multi-tenant?pivots=b2c-custom-policy#configuring-optional-claims). Note the client ID for use in the variables below.
+5. In your B2C tenant, [create a policy key for the multitenant app's client secret](https://docs.microsoft.com/en-us/azure/active-directory-b2c/identity-provider-azure-ad-multi-tenant?pivots=b2c-custom-policy#create-a-policy-key).
+
 ## Variables
 
 In order to deploy this to your own GitHub repository and against your own Azure AD B2C tenant, you will need to configure the following secrets in your GitHub repository:
