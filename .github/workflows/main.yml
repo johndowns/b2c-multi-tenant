@@ -22,6 +22,8 @@ jobs:
         uses: cschleiden/replace-tokens@v1
         with:
           files: '["b2c/policies/*.xml"]'
+        env:
+          B2C_TENANT_NAME: ${{ secrets.B2C_TENANT_NAME }}
 
       - name: Archive B2C policy files
         uses: actions/upload-artifact@v2
