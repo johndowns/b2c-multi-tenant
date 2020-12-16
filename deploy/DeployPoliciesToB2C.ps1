@@ -16,6 +16,7 @@ $policyIds = @(
 
 foreach ($policyId in $policyIds)
 {
+    Write-Host $policyId
     $pathToFile = Join-Path $PathToFiles "$policyId.xml"
     . DeployToB2C.ps1 -ClientId $ClientId -ClientSecret $ClientSecret -TenantId $TenantId -PolicyId $policyId -PathToFile $pathToFile
 }

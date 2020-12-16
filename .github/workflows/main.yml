@@ -33,4 +33,4 @@ jobs:
 
       - name: Deploy B2C policies
         shell: pwsh
-        run: deploy/DeployToB2C.ps1 -ClientID ${{ secrets.B2C_DEPLOYMENT_CLIENT_ID }} -ClientSecret ${{ secrets.B2C_DEPLOYMENT_CLIENT_SECRET }} -TenantId ${{ secrets.B2C_TENANT_ID }} -PathToFile b2c/policies
+        run: deploy/DeployPoliciesToB2C.ps1 -ClientID ${{ secrets.B2C_DEPLOYMENT_CLIENT_ID }} -ClientSecret ${{ secrets.B2C_DEPLOYMENT_CLIENT_SECRET }} -TenantId ${{ secrets.B2C_TENANT_ID }} -PathToFile b2c/policies
