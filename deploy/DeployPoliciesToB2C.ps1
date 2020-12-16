@@ -26,7 +26,7 @@ try {
 
     foreach ($policyId in $policyIds)
     {
-        $graphuri = 'https://graph.microsoft.com/beta/trustframework/policies/' + $policyId + '/$value'
+        $graphuri = 'https://graph.microsoft.com/beta/trustframework/policies/' + "B2C_1A_$policyId" + '/$value'
         $pathToFile = Join-Path $PathToFiles "$policyId.xml"
         $policyContent = Get-Content $PathToFile
         $response = Invoke-RestMethod -Uri $graphuri -Method Put -Body $policyContent -Headers $headers
