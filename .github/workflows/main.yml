@@ -22,6 +22,12 @@ jobs:
         env:
           B2C_TENANT_NAME: ${{ secrets.B2C_TENANT_NAME }}
 
+      - name: Archive B2C policy files
+        uses: actions/upload-artifact@v2
+        with:
+          name: b2c-policies
+          path: b2c/policies/*.xml
+
       - name: Deploy B2C policies
         shell: pwsh
         run: deploy/DeployPoliciesToB2C.ps1 -ClientID ${{ secrets.B2C_DEPLOYMENT_CLIENT_ID }} -ClientSecret ${{ secrets.B2C_DEPLOYMENT_CLIENT_SECRET }} -TenantId ${{ secrets.B2C_TENANT_ID }} -PathToFile b2c/policies
