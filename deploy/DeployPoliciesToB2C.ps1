@@ -6,6 +6,8 @@ Param(
     [Parameter(Mandatory = $true)][string]$PathToFiles
 )
 
+. DeployToB2C.ps1
+
 $policyIds = @(
     'TrustFrameworkBase',
     'TrustFrameworkExtensions',
@@ -18,5 +20,5 @@ foreach ($policyId in $policyIds)
 {
     Write-Host $policyId
     $pathToFile = Join-Path $PathToFiles "$policyId.xml"
-    . DeployToB2C.ps1 -ClientId $ClientId -ClientSecret $ClientSecret -TenantId $TenantId -PolicyId $policyId -PathToFile $pathToFile
+    DeployToB2C -ClientId $ClientId -ClientSecret $ClientSecret -TenantId $TenantId -PolicyId $policyId -PathToFile $pathToFile
 }
