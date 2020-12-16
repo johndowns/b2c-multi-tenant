@@ -20,13 +20,12 @@ jobs:
         with:
           files: '["b2c/policies/*.xml"]'
         env:
+          AAD_MULTI_TENANT_APP_CLIENT_ID: ${{ secrets.AAD_MULTI_TENANT_APP_CLIENT_ID }}
+          B2C_IDENTITY_EXPERIENCE_APP_CLIENT_ID: ${{ secrets.B2C_IDENTITY_EXPERIENCE_APP_CLIENT_ID }}
+          B2C_PROXY_IDENTITY_EXPERIENCE_APP_CLIENT_ID: ${{ secrets.B2C_PROXY_IDENTITY_EXPERIENCE_APP_CLIENT_ID }}
+          B2C_TENANT_ID: ${{ secrets.B2C_TENANT_ID }}
           B2C_TENANT_NAME: ${{ secrets.B2C_TENANT_NAME }}
-
-      - name: Archive B2C policy files
-        uses: actions/upload-artifact@v2
-        with:
-          name: b2c-policies
-          path: b2c/policies/*.xml
+          FACEBOOK_APP_ID: ${{ secrets.FACEBOOK_APP_ID }}
 
       - name: Deploy B2C policies
         shell: pwsh
