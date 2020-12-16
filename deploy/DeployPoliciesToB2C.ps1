@@ -6,7 +6,7 @@ Param(
     [Parameter(Mandatory = $true)][string]$PathToFiles
 )
 
-. DeployToB2C.ps1
+. deploy/DeployToB2C.ps1
 
 $policyIds = @(
     'TrustFrameworkBase',
