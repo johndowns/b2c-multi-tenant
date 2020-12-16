@@ -5,8 +5,8 @@
   xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06"
   PolicySchemaVersion="0.3.0.0"
   TenantId="#{B2C_TENANT_NAME}#.onmicrosoft.com"
-  PolicyId="SignUpSignInMultiTenantAAD"
-  PublicPolicyUri="http://#{B2C_TENANT_NAME}#.onmicrosoft.com/SignUpSignInMultiTenantAAD">
+  PolicyId="B2C_1A_SignUpSignInMultiTenantAAD"
+  PublicPolicyUri="http://#{B2C_TENANT_NAME}#.onmicrosoft.com/B2C_1A_SignUpSignInMultiTenantAAD">
 
   <BasePolicy>
     <TenantId>#{B2C_TENANT_NAME}#.onmicrosoft.com</TenantId>
