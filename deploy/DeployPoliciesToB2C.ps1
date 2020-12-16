@@ -11,7 +11,6 @@ $policyIds = @(
     'TrustFrameworkExtensions',
     'PasswordReset',
     'ProfileEdit',
-    'SignUpOrSignIn',
     'SignUpSignInMultiTenantAAD')
 
 try {
