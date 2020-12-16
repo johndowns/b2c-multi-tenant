@@ -15,21 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run a one-line script
-        run: echo Hello, world!
-
       - name: Replace tokens in B2C policy files
         uses: cschleiden/replace-tokens@v1
         with:
           files: '["b2c/policies/*.xml"]'
         env:
           B2C_TENANT_NAME: ${{ secrets.B2C_TENANT_NAME }}
-
-      - name: Archive B2C policy files
-        uses: actions/upload-artifact@v2
-        with:
-          name: b2c-policies
-          path: b2c/policies/*.xml
 
       - name: Deploy B2C policies
         shell: pwsh

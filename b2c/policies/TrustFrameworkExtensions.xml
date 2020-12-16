@@ -29,7 +29,7 @@
           <Metadata>
             <Item Key="METADATA">https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration</Item>
             <!-- Update the Client ID below to the Application ID -->
-            <Item Key="client_id">b47229f9-9f64-44d8-ba7b-856551d47786</Item>
+            <Item Key="client_id">#{AAD_MULTI_TENANT_APP_CLIENT_ID}#</Item>
             <Item Key="response_types">code</Item>
             <Item Key="scope">openid profile</Item>
             <Item Key="response_mode">form_post</Item>
@@ -67,7 +67,7 @@
       <TechnicalProfiles>
         <TechnicalProfile Id="Facebook-OAUTH">
           <Metadata>
-            <Item Key="client_id">1259928274389854</Item>
+            <Item Key="client_id">#{FACEBOOK_APP_ID}#</Item>
             <Item Key="scope">email public_profile</Item>
             <Item Key="ClaimsEndpoint">https://graph.facebook.com/me?fields=id,first_name,last_name,name,email</Item>
           </Metadata>
@@ -81,12 +81,12 @@
       <TechnicalProfiles>
         <TechnicalProfile Id="login-NonInteractive">
           <Metadata>
-            <Item Key="client_id">e04c240b-1fe8-4b5f-8ec4-94aa0bdc6258</Item>
-            <Item Key="IdTokenAudience">ce225b96-b089-437c-bf28-2ef1e8d67fca</Item>
+            <Item Key="client_id">#{B2C_PROXY_IDENTITY_EXPERIENCE_APP_CLIENT_ID}#</Item>
+            <Item Key="IdTokenAudience">#{B2C_IDENTITY_EXPERIENCE_APP_CLIENT_ID}#</Item>
           </Metadata>
           <InputClaims>
-            <InputClaim ClaimTypeReferenceId="client_id" DefaultValue="e04c240b-1fe8-4b5f-8ec4-94aa0bdc6258" />
-            <InputClaim ClaimTypeReferenceId="resource_id" PartnerClaimType="resource" DefaultValue="ce225b96-b089-437c-bf28-2ef1e8d67fca" />
+            <InputClaim ClaimTypeReferenceId="client_id" DefaultValue="#{B2C_PROXY_IDENTITY_EXPERIENCE_APP_CLIENT_ID}#" />
+            <InputClaim ClaimTypeReferenceId="resource_id" PartnerClaimType="resource" DefaultValue="#{B2C_IDENTITY_EXPERIENCE_APP_CLIENT_ID}#" />
           </InputClaims>
         </TechnicalProfile>
       </TechnicalProfiles>
